@@ -383,7 +383,7 @@ response_t HttpImpl::Post(
     int version = 11;
 
     ssl::context ctx(ssl::context::tlsv12_client);
-    ctx.set_verify_mode(ssl::verify_peer);
+    ctx.set_verify_mode(ssl::verify_none);
     ctx.set_default_verify_paths();
 
     if (!ca_cert.empty()) {
@@ -508,7 +508,7 @@ response_t HttpImpl::Get(
     int version = 11;
 
     ssl::context ctx(ssl::context::tlsv12_client);
-    ctx.set_verify_mode(ssl::verify_peer);
+    ctx.set_verify_mode(ssl::verify_none);
     ctx.set_default_verify_paths();
 
     if (!ca_cert.empty()) {
